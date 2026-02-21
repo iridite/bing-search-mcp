@@ -30,15 +30,17 @@
 
 ## 📦 安装
 
-### 方式 1: 使用 uvx (推荐)
+### 方式 1: 通过 MCP 配置自动安装 (推荐)
+
+配置后，`uvx` 会在首次使用时自动安装包，无需手动安装。
+
+### 方式 2: 手动安装
 
 ```bash
-uvx mcp-bing-scraper
-```
+# 使用 uvx (推荐)
+uvx --from mcp-bing-scraper bing-search-mcp
 
-### 方式 2: 使用 pip
-
-```bash
+# 或使用 pip
 pip install mcp-bing-scraper
 ```
 
@@ -56,17 +58,25 @@ uv pip install -e .
 
 ### Claude Code
 
-编辑 `~/.claude/mcp.json`：
+编辑 `~/.claude/mcp.json` 或项目根目录的 `.mcp.json`：
 
 ```json
 {
   "mcpServers": {
     "bing-search": {
       "command": "uvx",
-      "args": ["mcp-bing-scraper"]
+      "args": ["--from", "mcp-bing-scraper", "bing-search-mcp"]
     }
   }
 }
+```
+
+**注意**: 包名是 `mcp-bing-scraper`，但可执行文件名是 `bing-search-mcp`。
+
+或使用 CLI 命令自动配置：
+
+```bash
+claude mcp add bing-search -- uvx --from mcp-bing-scraper bing-search-mcp
 ```
 
 ### Claude Desktop
@@ -80,7 +90,7 @@ uv pip install -e .
   "mcpServers": {
     "bing-search": {
       "command": "uvx",
-      "args": ["mcp-bing-scraper"]
+      "args": ["--from", "mcp-bing-scraper", "bing-search-mcp"]
     }
   }
 }
@@ -89,6 +99,18 @@ uv pip install -e .
 ### Cursor
 
 在 Cursor 设置中添加 MCP 服务器配置（参考 Claude Desktop 配置）。
+
+### 验证配置
+
+配置完成后，重启客户端并验证：
+
+```bash
+# Claude Code 用户
+claude mcp list
+
+# 或在对话中测试
+# 输入: 搜索 "Python 教程"
+```
 
 ## 🎮 使用示例
 
@@ -181,6 +203,31 @@ self.client = httpx.AsyncClient(
 修改 `headers` 中的 `User-Agent` 以适应特定需求。
 
 ## 🐛 故障排除
+
+### 问题: MCP 服务器未显示或无法连接
+
+**可能原因**: 配置中使用了错误的可执行文件名
+
+**错误配置** ❌:
+```json
+{
+  "command": "uvx",
+  "args": ["mcp-bing-scraper"]  // 这是包名，不是可执行文件名
+}
+```
+
+**正确配置** ✅:
+```json
+{
+  "command": "uvx",
+  "args": ["--from", "mcp-bing-scraper", "bing-search-mcp"]
+}
+```
+
+**解决方案**:
+1. 检查配置文件中的 `args` 是否正确
+2. 重启 Claude Code 或 Claude Desktop
+3. 运行 `claude mcp list` 验证服务器是否加载
 
 ### 问题: 搜索返回空结果
 

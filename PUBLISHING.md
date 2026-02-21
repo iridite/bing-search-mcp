@@ -42,11 +42,13 @@ twine upload dist/*
   "mcpServers": {
     "bing-search": {
       "command": "uvx",
-      "args": ["bing-search-mcp"]
+      "args": ["--from", "mcp-bing-scraper", "bing-search-mcp"]
     }
   }
 }
 ```
+
+**注意**: PyPI 包名是 `mcp-bing-scraper`，可执行文件名是 `bing-search-mcp`。
 
 ## 提交到 MCP 服务器列表
 
