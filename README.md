@@ -2,6 +2,8 @@
 
 免费的 Bing 搜索 MCP 服务器，通过抓取 Bing 搜索结果提供搜索功能。**无需 API key，完全免费！**
 
+<!-- mcp-name: io.github.iridite/bing-search-free -->
+
 ## 特点
 
 - 🆓 完全免费，无需 API key（与官方 bing-search-mcp 不同）
