@@ -1,0 +1,21 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.iridite/bing-search-free",
+  "title": "Bing Search (Free)",
+  "description": "Free Bing search MCP server - No API key required",
+  "repository": {
+    "url": "https://github.com/iridite/bing-search-mcp",
+    "source": "github"
+  },
+  "version": "0.1.1",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "mcp-bing-scraper",
+      "version": "0.1.1",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}
