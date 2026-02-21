@@ -3,9 +3,9 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "bing-search-mcp"
+name = "mcp-bing-scraper"
 version = "0.1.0"
-description = "Free Bing search MCP server for Claude Code"
+description = "Free Bing search MCP server for Claude Code - No API key required"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}

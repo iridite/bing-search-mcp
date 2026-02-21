@@ -1,13 +1,14 @@
 # Bing 搜索 MCP 服务器
 
-免费的 Bing 搜索 MCP 服务器，通过抓取 Bing 搜索结果提供搜索功能。
+免费的 Bing 搜索 MCP 服务器，通过抓取 Bing 搜索结果提供搜索功能。**无需 API key，完全免费！**
 
 ## 特点
 
-- 🆓 完全免费，无需 API key
+- 🆓 完全免费，无需 API key（与官方 bing-search-mcp 不同）
 - 🌐 支持中英文搜索
 - 📦 使用 uvx 一键运行
 - 🔍 返回标题、URL 和摘要
+- 🎯 智能语言检测
 
 ## 安装
 
@@ -40,7 +41,7 @@ cd bing-search-mcp
   "mcpServers": {
     "bing-search": {
       "command": "uvx",
-      "args": ["bing-search-mcp"]
+      "args": ["mcp-bing-scraper"]
     }
   }
 }
