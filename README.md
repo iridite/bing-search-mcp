@@ -14,7 +14,7 @@
 ### 本地开发
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/iridite/bing-search-mcp.git
 cd bing-search-mcp
 ```
 
