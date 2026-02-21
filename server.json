@@ -7,12 +7,12 @@
     "url": "https://github.com/iridite/bing-search-mcp",
     "source": "github"
   },
-  "version": "0.1.1",
+  "version": "0.2.0",
   "packages": [
     {
       "registryType": "pypi",
       "identifier": "mcp-bing-scraper",
-      "version": "0.1.1",
+      "version": "0.2.0",
       "transport": {
         "type": "stdio"
       }
